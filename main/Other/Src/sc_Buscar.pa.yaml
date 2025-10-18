@@ -1,0 +1,440 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  sc_Buscar:
+    Properties:
+      Fill: =ColorA6.C_FondoClaro1
+      LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+      OnVisible: =ClearCollect(DetalleListaLocal2,DetalleListaLocal1)
+    Children:
+      - Container1_9:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            BorderStyle: =BorderStyle.None
+            DropShadow: =DropShadow.None
+            Height: =673
+            RadiusBottomLeft: =11
+            RadiusBottomRight: =11
+            RadiusTopLeft: =11
+            RadiusTopRight: =11
+            Width: =Parent.Width
+            Y: =95
+          Children:
+            - Gallery2_3:
+                Control: Gallery@2.15.0
+                Variant: BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Height: =483
+                  Items: =Search(DetalleListaLocal2,TextInput1.Text,dPLACA)
+                  Width: =874
+                  X: =445
+                  Y: =190
+                Children:
+                  - Container3_7:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        DropShadow: =DropShadow.Regular
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =96
+                        RadiusBottomLeft: =19
+                        RadiusBottomRight: =19
+                        RadiusTopLeft: =19
+                        RadiusTopRight: =19
+                        Width: =851
+                        X: =4
+                  - Button5_7:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =ColorFade(Self.Fill, -15%)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.'Open Sans'
+                        Height: =69
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                        OnSelect: =Select(Parent)
+                        PressedBorderColor: =Self.Fill
+                        PressedColor: =Self.Fill
+                        PressedFill: =Self.Color
+                        Size: =33
+                        Text: =ThisItem.dPLACA
+                        Width: =236
+                        X: =27
+                        Y: =13
+                  - Button5_8:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        Align: =Align.Right
+                        AutoDisableOnSelect: =false
+                        BorderColor: =ColorFade(Self.Fill, -15%)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.'Open Sans'
+                        Height: =64
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                        OnSelect: =Select(Parent)
+                        PressedBorderColor: =Self.Fill
+                        PressedColor: =Self.Fill
+                        PressedFill: =Self.Color
+                        Size: =33
+                        Text: =Round(ThisItem.dPROMEDIO_NEUMA,2)
+                        Width: =143
+                        X: =557
+                        Y: =13
+                  - Button5_9:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        AutoDisableOnSelect: =false
+                        BorderColor: =ColorFade(Self.Fill, -15%)
+                        Color: =If(ThisItem.dACCION="REENCAUCHE",Color.Yellow,Color.Black)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        Fill: =If(ThisItem.dACCION="REENCAUCHE",Color.Red,If(ThisItem.dACCION="BUENO",Color.Yellow,If(ThisItem.dACCION="PROXIMO",Color.Orange,Color.Gray)))
+                        Font: =Font.'Open Sans'
+                        Height: =25
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =3
+                        PaddingLeft: =3
+                        PaddingRight: =3
+                        PaddingTop: =3
+                        PressedBorderColor: =Self.Fill
+                        PressedColor: =Self.Fill
+                        PressedFill: =Self.Color
+                        Size: =9
+                        Text: =ThisItem.dACCION
+                        Width: =119
+                        X: =716
+                        Y: =36
+                  - Label1_11:
+                      Control: Label@2.5.1
+                      Properties:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Bold
+                        Height: =33
+                        OnSelect: =Select(Parent)
+                        Size: =9
+                        Text: =ThisItem.dUBICACION_NEUMA
+                        Width: =44
+                        X: =4
+                        Y: =31
+                  - Label1_12:
+                      Control: Label@2.5.1
+                      Properties:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =RGBA(153, 153, 153, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =35
+                        Italic: =true
+                        OnSelect: =Select(Parent)
+                        Size: =16
+                        Text: =ThisItem.dM1
+                        Width: =69
+                        X: =263
+                        Y: =30
+                  - Label1_13:
+                      Control: Label@2.5.1
+                      Properties:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =RGBA(153, 153, 153, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =35
+                        Italic: =true
+                        OnSelect: =Select(Parent)
+                        Size: =16
+                        Text: =ThisItem.dM1
+                        Width: =69
+                        X: =338
+                        Y: =30
+                  - Label1_14:
+                      Control: Label@2.5.1
+                      Properties:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =RGBA(153, 153, 153, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =35
+                        Italic: =true
+                        OnSelect: =Select(Parent)
+                        Size: =16
+                        Text: =ThisItem.dM1
+                        Width: =69
+                        X: =413
+                        Y: =30
+                  - Label1_15:
+                      Control: Label@2.5.1
+                      Properties:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =RGBA(153, 153, 153, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =35
+                        Italic: =true
+                        OnSelect: =Select(Parent)
+                        Size: =16
+                        Text: =ThisItem.dM1
+                        Width: =69
+                        X: =488
+                        Y: =30
+                  - Label1_16:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =30
+                        OnSelect: =Select(Parent)
+                        Size: =11
+                        Text: =ThisItem.dFECHAINSPECCION
+                        Width: =190
+                        X: =48
+            - Gallery2_4:
+                Control: Gallery@2.15.0
+                Variant: BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Height: =483
+                  Items: =Distinct(Search(DetalleListaLocal1,TextInput1.Text,dPLACA),dPLACA)
+                  OnSelect: =
+                  Width: =330
+                  X: =104
+                  Y: =190
+                Children:
+                  - Container3_8:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        DropShadow: =DropShadow.Regular
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =96
+                        RadiusBottomLeft: =19
+                        RadiusBottomRight: =19
+                        RadiusTopLeft: =19
+                        RadiusTopRight: =19
+                        Width: =318
+                        X: =4
+                  - Button5_10:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =ColorFade(Self.Fill, -15%)
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.'Open Sans'
+                        Height: =69
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(9, 33, 98, 1)
+                        HoverFill: =Color.Transparent
+                        OnSelect: =ClearCollect(DetalleListaLocal2,Filter(DetalleListaLocal1,dPLACA=ThisItem.Value))
+                        PressedBorderColor: =Self.Fill
+                        PressedColor: =RGBA(54, 176, 75, 1)
+                        PressedFill: =Color.Transparent
+                        Size: =33
+                        Text: =ThisItem.Value
+                        Width: =236
+                        X: =45
+                        Y: =13
+      - Container3_6:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            DropShadow: =DropShadow.Regular
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =118
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Width: =1195
+            X: =106
+            Y: =120
+          Children:
+            - Label3_3:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  PaddingBottom: =3
+                  PaddingLeft: =33
+                  PaddingRight: =3
+                  PaddingTop: =3
+                  Size: =19
+                  Text: ="Buscar Inspecciones"
+                  Width: =Parent.Width
+                  Y: =10
+            - TextInput1:
+                Control: Classic/TextInput@2.3.2
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(204, 204, 204, 1)
+                  Default: =
+                  Font: =Font.'Open Sans'
+                  Height: =51
+                  HintText: |-
+                    ="Buscar por Placa 🔍"
+                  HoverBorderColor: =RGBA(0, 18, 107, 1)
+                  HoverFill: =RGBA(186, 202, 226, 1)
+                  RadiusBottomLeft: =19
+                  RadiusBottomRight: =19
+                  RadiusTopLeft: =19
+                  RadiusTopRight: =19
+                  Width: =541
+                  X: =625
+                  Y: =30
+            - Button9:
+                Control: Classic/Button@2.2.0
+                Properties:
+                  BorderColor: =ColorFade(Self.Fill, -15%)
+                  Color: =RGBA(0, 0, 0, 1)
+                  DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                  Fill: =RGBA(255, 255, 0, 1)
+                  Font: =Font.'Open Sans'
+                  HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                  HoverColor: =RGBA(255, 255, 255, 1)
+                  HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                  OnSelect: =ClearCollect(DetalleListaLocal2,Filter(DetalleListaLocal1,dACCION="BUENO"))
+                  PressedBorderColor: =Self.Fill
+                  PressedColor: =Self.Fill
+                  PressedFill: =Self.Color
+                  RadiusBottomLeft: =16
+                  RadiusBottomRight: =16
+                  RadiusTopLeft: =16
+                  RadiusTopRight: =16
+                  Size: =13
+                  Text: |-
+                    ="BUENO: "&CountRows(Filter(DetalleListaLocal1,dACCION="BUENO"))
+                    //If(Value(lbl_Umbral.Text)<=7;"REENCAUCHE";If(Value(lbl_Umbral.Text)>=7 && Value(lbl_Umbral.Text)<=10;"PROXIMO";"BUENO"))
+                  X: =35
+                  Y: =60
+            - Button9_5:
+                Control: Classic/Button@2.2.0
+                Properties:
+                  BorderColor: =ColorFade(Self.Fill, -15%)
+                  Color: =RGBA(0, 0, 0, 1)
+                  DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                  Fill: =RGBA(255, 191, 0, 1)
+                  Font: =Font.'Open Sans'
+                  HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                  HoverColor: =RGBA(255, 255, 255, 1)
+                  HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                  OnSelect: =ClearCollect(DetalleListaLocal2,Filter(DetalleListaLocal1,dACCION="PROXIMO"))
+                  PressedBorderColor: =Self.Fill
+                  PressedColor: =Self.Fill
+                  PressedFill: =Self.Color
+                  RadiusBottomLeft: =16
+                  RadiusBottomRight: =16
+                  RadiusTopLeft: =16
+                  RadiusTopRight: =16
+                  Size: =13
+                  Text: |-
+                    ="PROXIMO : "&CountRows(Filter(DetalleListaLocal1,dACCION="PROXIMO"))
+                  X: =221
+                  Y: =60
+            - Button9_6:
+                Control: Classic/Button@2.2.0
+                Properties:
+                  BorderColor: =ColorFade(Self.Fill, -15%)
+                  Color: =RGBA(255, 255, 255, 1)
+                  DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                  Fill: =RGBA(168, 0, 0, 1)
+                  Font: =Font.'Open Sans'
+                  HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                  HoverColor: =RGBA(255, 255, 255, 1)
+                  HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                  OnSelect: =ClearCollect(DetalleListaLocal2,Filter(DetalleListaLocal1,dACCION="REENCAUCHE"))
+                  PressedBorderColor: =Self.Fill
+                  PressedColor: =Self.Fill
+                  PressedFill: =Self.Color
+                  RadiusBottomLeft: =16
+                  RadiusBottomRight: =16
+                  RadiusTopLeft: =16
+                  RadiusTopRight: =16
+                  Size: =13
+                  Text: |-
+                    ="REENCAUCHE : "&CountRows(Filter(DetalleListaLocal1,dACCION="REENCAUCHE"))
+                  Width: =183
+                  X: =406
+                  Y: =60
+      - Container1_8:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            DropShadow: =DropShadow.Regular
+            Height: =75
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =1366
+      - Button2_5:
+          Control: Classic/Button@2.2.0
+          Properties:
+            Align: =Align.Left
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(9, 33, 98, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(9, 33, 98, 1)
+            DisabledFill: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            Height: =75
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            PaddingBottom: =3
+            PaddingLeft: =33
+            PaddingRight: =3
+            PaddingTop: =3
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Text: ="A6 | Sistema de Inspección Neumaticos"
+            Width: =1366
+      - Label7_5:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(10, 88, 245, 1)
+            Font: =Font.Arial
+            Size: =11
+            Text: ="Volver al menú"
+            X: =138
+            Y: =75
+      - Icon2_2:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(10, 88, 245, 1)
+            Height: =31
+            Icon: =Icon.ChevronLeft
+            OnSelect: =Navigate(Incio)
+            PaddingBottom: =9
+            PaddingRight: =300
+            PaddingTop: =9
+            Width: =333
+            X: =106
+            Y: =80

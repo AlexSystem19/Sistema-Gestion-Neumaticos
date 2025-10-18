@@ -1,0 +1,250 @@
+Incio As screen:
+    Fill: =ColorA6.C_FondoClaro1
+    OnVisible: |-
+        =ClearCollect(
+            Contadores,
+            {Titulo: "Total Local",Numc:CountRows(DetalleListaLocal)},
+            {Titulo: "Pendientes",Numc:CountRows(DetalleInspeccion)},
+            {Titulo: "Sincronizadas",Numc:CountRows(ListSync)},
+            {Titulo: "Conexión"}
+        );
+        ClearCollect(
+            MenuList,
+            {
+                Titulo: "	Nueva Inspección	",
+                desp: "Iniciar nueva inespección de nuemáticos",
+                Icon:Icon.Camera,
+                Navegar:sc_NuevaInspeccion_Datos,
+                Color:RGBA(39, 113, 194, 1)
+            },
+            {
+                Titulo: "	Historial	",
+                desp: "Ver inspecciones realizadas",
+                Icon:Icon.History,
+                Navegar:sc_Historial,
+                Color:RGBA(39, 113, 194, 1)
+            },
+            {
+                Titulo: "	Sincronizar	",
+                desp: "Enviar datos al servidor",
+                Icon:Icon.Sync,
+                Navegar:sc_Sincronizar,
+                Color:RGBA(39, 113, 194, 1)
+            },
+            {
+                Titulo: "	Dashboard	",
+                desp: "Estadisticas y reportes",
+                Icon:Icon.Trending,
+                Navegar:sc_NuevaInspeccion_Datos,
+                Color:ColorA6.C_FondoOscu
+            },
+            {
+                Titulo: "	Busqueda	",
+                desp: "Buscar inspecciones",
+                Icon:Icon.Search,
+                Navegar:sc_Buscar,
+                Color:ColorA6.C_FondoOscu
+        
+            },
+            {
+                Titulo: "	Configuración	",
+                desp: "Ajustes del sistema",
+                Icon:Icon.Hamburger,
+                Navegar:sc_Configuracion,
+                Color:ColorA6.C_FondoOscu
+            }
+        )
+
+    Container1 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Regular
+        Height: =75
+        Width: =1366
+        ZIndex: =2
+
+    Button2 As button:
+        Align: =Align.Left
+        Color: =RGBA(9, 33, 98, 1)
+        DisabledColor: =RGBA(9, 33, 98, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =75
+        PaddingBottom: =3
+        PaddingLeft: =66
+        PaddingRight: =3
+        PaddingTop: =3
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: ="A6 | Sistema de Inspección Neumaticos"
+        Width: =1366
+        ZIndex: =3
+
+    "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =131
+        Items: =Contadores
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =131
+        Width: =1264
+        WrapCount: =4
+        X: =66
+        Y: =168
+        ZIndex: =4
+
+        Button3 As button:
+            Align: =Align.Left
+            BorderColor: =Color.Black
+            Color: =RGBA(9, 33, 98, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =103
+            OnSelect: =Select(Parent)
+            PaddingBottom: =11
+            PaddingLeft: =11
+            PaddingRight: =3
+            PaddingTop: =11
+            RadiusBottomLeft: =11
+            RadiusBottomRight: =11
+            RadiusTopLeft: =11
+            RadiusTopRight: =11
+            Size: =13
+            Text: =ThisItem.Titulo
+            VerticalAlign: =VerticalAlign.Top
+            Width: =277
+            X: =22
+            Y: =15
+            ZIndex: =6
+
+        Label2 As label:
+            Align: =Align.Center
+            Color: =RGBA(54, 176, 75, 1)
+            FontWeight: =FontWeight.Bold
+            OnSelect: =Select(Parent)
+            PaddingBottom: =3
+            PaddingLeft: =3
+            PaddingRight: =3
+            PaddingTop: =3
+            Text: =If(Connection.Connected=true,"Conectado","Sin Conexion")
+            Visible: =If(ThisItem.Titulo="Conexión",true,false)
+            Width: =127
+            X: =160
+            Y: =68
+            ZIndex: =7
+
+        Label13 As label:
+            Align: =Align.Right
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Numc
+            Width: =49
+            X: =238
+            Y: =78
+            ZIndex: =8
+
+    "Gallery3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =439
+        Items: =MenuList
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        OnSelect: =Navigate(ThisItem.Navegar)
+        TemplatePadding: =0
+        TemplateSize: =217
+        Width: =1293
+        WrapCount: =3
+        X: =59
+        Y: =320
+        ZIndex: =5
+
+        Container6 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.Semibold
+            Height: =173
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Width: =397
+            X: =15
+            Y: =13
+            ZIndex: =1
+
+        Button4 As button:
+            Fill: =ThisItem.Color
+            Height: =173
+            OnSelect: =Select(Parent)
+            PaddingBottom: =3
+            PaddingLeft: =3
+            PaddingRight: =3
+            PaddingTop: =60
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Size: =19
+            Text: =ThisItem.Titulo
+            Width: =397
+            X: =15
+            Y: =13
+            ZIndex: =3
+
+        Icon1 As icon.DockLeft:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =55
+            Icon: =ThisItem.Icon
+            OnSelect: =Select(Parent)
+            PaddingBottom: =3
+            PaddingLeft: =3
+            PaddingRight: =3
+            PaddingTop: =3
+            Width: =54
+            X: =186
+            Y: =43
+            ZIndex: =4
+
+        Label9 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 0.54)
+            Height: =44
+            OnSelect: =Select(Parent)
+            Size: =11
+            Text: =ThisItem.desp
+            VerticalAlign: =VerticalAlign.Top
+            Width: =397
+            X: =15
+            Y: =142
+            ZIndex: =5
+
+    Label3_7 As label:
+        FontWeight: =FontWeight.Bold
+        PaddingBottom: =3
+        PaddingLeft: =66
+        PaddingRight: =3
+        PaddingTop: =3
+        Size: =19
+        Text: ="Bienvenido, Alexis Gutierrez"
+        Width: =769
+        Y: =88
+        ZIndex: =6
+
+    Label11_1 As label:
+        Align: =Align.Right
+        Height: =54
+        Text: =Today()&" 📆"
+        Width: =260
+        X: =1092
+        Y: =10
+        ZIndex: =7
+
+    Label3_8 As label:
+        PaddingBottom: =3
+        PaddingLeft: =66
+        PaddingRight: =3
+        PaddingTop: =3
+        Size: =11
+        Text: ="Desarrollador Low-Code"
+        VerticalAlign: =VerticalAlign.Top
+        Width: =769
+        Y: =128
+        ZIndex: =8
+

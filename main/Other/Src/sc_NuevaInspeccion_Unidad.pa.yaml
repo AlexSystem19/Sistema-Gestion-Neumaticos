@@ -1,0 +1,1545 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  sc_NuevaInspeccion_Unidad:
+    Properties:
+      Fill: =ColorA6.C_FondoClaro1
+      LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+      OnVisible: =Set(varNumNeuma,0)
+    Children:
+      - Container3:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            DropShadow: =DropShadow.Regular
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =588
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Width: =509
+            X: =106
+            Y: =120
+      - Container3_2:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            DropShadow: =DropShadow.Regular
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =68
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Width: =661
+            X: =638
+            Y: =120
+      - Container3_1:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            DropShadow: =DropShadow.Regular
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =503
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Width: =662
+            X: =637
+            Y: =205
+      - Container1_3:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            DropShadow: =DropShadow.Regular
+            Height: =75
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =1366
+      - Button2_2:
+          Control: Classic/Button@2.2.0
+          Properties:
+            Align: =Align.Left
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(23, 63, 82, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(9, 33, 98, 1)
+            DisabledFill: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            Height: =75
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            OnSelect: |-
+              =Clear(DetalleInspeccion);
+              Set(varNumNeuma,0);
+              Clear(DetalleInspeccion1);
+              Clear(TotalNeuma)
+            PaddingBottom: =3
+            PaddingLeft: =33
+            PaddingRight: =3
+            PaddingTop: =3
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Text: ="A6 | Sistema de Inspección Neumaticos"
+            Width: =1366
+      - Button8:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(50, 85, 103, 0.75)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(204, 204, 204, 1)
+            Font: =Font.'Open Sans'
+            Height: =486
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Text: =
+            Width: =220
+            X: =248
+            Y: =168
+      - Button8_1:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(204, 204, 204, 1)
+            Font: =Font.'Open Sans'
+            Height: =7
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Text: =
+            Visible: =If(tipovehiculo="TRACTO",true,false)
+            Width: =219
+            X: =249
+            Y: =249
+      - Button8_2:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(204, 204, 204, 1)
+            Font: =Font.'Open Sans'
+            Height: =7
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Text: =
+            Visible: =If(tipovehiculo="TRACTO",true,false)
+            Width: =219
+            X: =248
+            Y: =568
+      - Button8_3:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(204, 204, 204, 1)
+            Font: =Font.'Open Sans'
+            Height: =7
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Text: =""
+            Visible: =If(tipovehiculo="TRACTO",true,false)
+            Width: =219
+            X: =249
+            Y: =437
+      - Button8_4:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =Color.LightGray
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =If(varNumNeuma=4,Color.Orange,RGBA(146, 183, 201, 1))
+            Font: =Font.'Open Sans'
+            Height: =102
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            OnSelect: |-
+              =Set(varNumNeuma,4);
+              Reset(m1);
+              Reset(m2);
+              Reset(m3);
+              Reset(m4);
+              SetFocus(m1)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Text: ="4"
+            Visible: =If(tipovehiculo="TRACTO",true,false)
+            Width: =68
+            X: =436
+            Y: =205
+      - Button8_5:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =Color.LightGray
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =If(varNumNeuma=1,Color.Orange,RGBA(146, 183, 201, 1))
+            Font: =Font.'Open Sans'
+            Height: =102
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            OnSelect: |-
+              =Set(varNumNeuma,1);
+              Reset(m1);
+              Reset(m2);
+              Reset(m3);
+              Reset(m4);
+              SetFocus(m1)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Text: ="1"
+            Visible: =If(tipovehiculo="TRACTO",true,false)
+            Width: =68
+            X: =208
+            Y: =205
+      - Button8_6:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =Color.LightGray
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =If(varNumNeuma=5,Color.Orange,RGBA(146, 183, 201, 1))
+            Font: =Font.'Open Sans'
+            Height: =102
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            OnSelect: |-
+              =Set(varNumNeuma,5);
+              Reset(m1);
+              Reset(m2);
+              Reset(m3);
+              Reset(m4);
+              SetFocus(m1)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Text: ="5"
+            Visible: =If(tipovehiculo="TRACTO",true,false)
+            Width: =68
+            X: =436
+            Y: =390
+      - Button8_7:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =Color.LightGray
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =If(varNumNeuma=6,Color.Orange,RGBA(146, 183, 201, 1))
+            Font: =Font.'Open Sans'
+            Height: =102
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            OnSelect: |-
+              =Set(varNumNeuma,6);
+              Reset(m1);
+              Reset(m2);
+              Reset(m3);
+              Reset(m4);
+              SetFocus(m1)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Text: ="6"
+            Visible: =If(tipovehiculo="TRACTO",true,false)
+            Width: =68
+            X: =436
+            Y: =517
+      - Button8_8:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =Color.LightGray
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =If(varNumNeuma=3,Color.Orange,RGBA(146, 183, 201, 1))
+            Font: =Font.'Open Sans'
+            Height: =102
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            OnSelect: |-
+              =Set(varNumNeuma,3);
+              Reset(m1);
+              Reset(m2);
+              Reset(m3);
+              Reset(m4);
+              SetFocus(m1)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Text: ="3"
+            Visible: =If(tipovehiculo="TRACTO",true,false)
+            Width: =68
+            X: =208
+            Y: =517
+      - Button8_9:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =Color.LightGray
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =If(varNumNeuma=2,Color.Orange,RGBA(146, 183, 201, 1))
+            Font: =Font.'Open Sans'
+            Height: =102
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            OnSelect: |-
+              =Set(varNumNeuma,2);
+              Reset(m1);
+              Reset(m2);
+              Reset(m3);
+              Reset(m4);
+              SetFocus(m1)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Text: ="2"
+            Visible: =If(tipovehiculo="TRACTO",true,false)
+            Width: =68
+            X: =208
+            Y: =390
+      - Label5:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(9, 33, 98, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingBottom: =3
+            PaddingLeft: =3
+            PaddingRight: =3
+            PaddingTop: =3
+            Text: ="M1"
+            Tooltip: ="""MEDIDAS"""
+            Width: =139
+            X: =668
+            Y: =255
+      - Label5_1:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(9, 33, 98, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingBottom: =3
+            PaddingLeft: =3
+            PaddingRight: =3
+            PaddingTop: =3
+            Text: ="M1"
+            Tooltip: ="MEDIDAS"
+            Width: =138
+            X: =826
+            Y: =258
+      - m4:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(39, 113, 194, 1)
+            BorderThickness: =6
+            Default: =
+            DisplayMode: =If(varNumNeuma>0,DisplayMode.Edit,DisplayMode.Disabled)
+            Font: =Font.'Open Sans'
+            Format: =TextFormat.Number
+            Height: =128
+            HoverBorderColor: =RGBA(246, 88, 16, 1)
+            HoverFill: =RGBA(186, 202, 226, 1)
+            MaxLength: =2
+            PaddingBottom: =3
+            PaddingLeft: =3
+            PaddingRight: =3
+            PaddingTop: =3
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Reset: =true
+            Size: =66
+            TabIndex: =4
+            Width: =137
+            X: =1132
+            Y: =288
+      - m3:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(39, 113, 194, 1)
+            BorderThickness: =6
+            Default: =
+            DisplayMode: =If(varNumNeuma>0,DisplayMode.Edit,DisplayMode.Disabled)
+            Font: =Font.'Open Sans'
+            Format: =TextFormat.Number
+            Height: =128
+            HoverBorderColor: =RGBA(246, 88, 16, 1)
+            HoverFill: =RGBA(186, 202, 226, 1)
+            MaxLength: =5
+            PaddingBottom: =3
+            PaddingLeft: =3
+            PaddingRight: =3
+            PaddingTop: =3
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Reset: =true
+            Size: =39
+            TabIndex: =3
+            Width: =137
+            X: =978
+            Y: =289
+      - m2:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(39, 113, 194, 1)
+            BorderThickness: =6
+            Default: =
+            DisplayMode: =If(varNumNeuma>0,DisplayMode.Edit,DisplayMode.Disabled)
+            Font: =Font.'Open Sans'
+            Format: =TextFormat.Number
+            Height: =128
+            HoverBorderColor: =RGBA(246, 88, 16, 1)
+            HoverFill: =RGBA(186, 202, 226, 1)
+            MaxLength: =5
+            PaddingBottom: =3
+            PaddingLeft: =3
+            PaddingRight: =3
+            PaddingTop: =3
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Reset: =true
+            Size: =39
+            TabIndex: =2
+            Width: =137
+            X: =825
+            Y: =289
+      - m1:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(39, 113, 194, 1)
+            BorderThickness: =6
+            Default: =
+            DisplayMode: =If(varNumNeuma>0,DisplayMode.Edit,DisplayMode.Disabled)
+            Font: =Font.'Open Sans'
+            Format: =TextFormat.Number
+            Height: =128
+            HoverBorderColor: =RGBA(246, 88, 16, 1)
+            HoverFill: =RGBA(186, 202, 226, 1)
+            MaxLength: =5
+            PaddingBottom: =3
+            PaddingLeft: =3
+            PaddingRight: =3
+            PaddingTop: =3
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Reset: =true
+            Size: =39
+            TabIndex: =1
+            Width: =137
+            X: =672
+            Y: =288
+      - Label5_2:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(9, 33, 98, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingBottom: =3
+            PaddingLeft: =3
+            PaddingRight: =3
+            PaddingTop: =3
+            Text: ="M2"
+            Tooltip: ="MEDIDAS"
+            Width: =138
+            X: =976
+            Y: =257
+      - Label5_3:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(9, 33, 98, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingBottom: =3
+            PaddingLeft: =3
+            PaddingRight: =3
+            PaddingTop: =3
+            Text: ="M4"
+            Tooltip: ="MEDIDAS"
+            Width: =139
+            X: =1130
+            Y: =256
+      - totalInspeccionadas:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            Height: =0
+            Text: =If(IsBlank(m1.Text),0,1)+If(IsBlank(m2.Text),0,1)+If(IsBlank(m3.Text),0,1)+If(IsBlank(m4.Text),0,1)
+            Visible: =false
+            Width: =36
+            X: =1330
+            Y: =768
+      - Label6_5:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            Height: =30
+            Size: =11
+            Text: ="DESGASTE X DIA"
+            Visible: =false
+            Width: =142
+            X: =326
+            Y: =738
+      - lbl_DesgastexDia:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(54, 176, 75, 1)
+            Font: =Font.'Open Sans'
+            Height: =30
+            Size: =11
+            Text: =VGastoMM
+            Visible: =false
+            Width: =101
+            X: =509
+            Y: =738
+      - lbl_diasproyectados:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            Text: =((Value(lbl_Promedio.Text)-Value(lbl_Limite.Text))/Value(lbl_DesgastexDia.Text))*Value(lbl_margen.Text)
+            Visible: =false
+            Width: =85
+            X: =1281
+            Y: =75
+      - lbl_desgaste:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            Text: =(Value(lbl_Promedio.Text)-Value(lbl_Limite.Text))/Value(lbl_DesgastexDia.Text)
+            Visible: =false
+            Width: =85
+            X: =1182
+            Y: =75
+      - Label11:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            Height: =54
+            Text: =Today()
+            X: =282
+            Y: =654
+      - lbl_margen:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(54, 176, 75, 1)
+            Font: =Font.'Open Sans'
+            Height: =30
+            Size: =11
+            Text: =VFactorSeguridad
+            Visible: =false
+            Width: =101
+            X: =957
+            Y: =738
+      - Button9_1:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorA6.C_FondoOscu
+            BorderStyle: =BorderStyle.None
+            Color: =ColorA6.C_FondoClaro1
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisplayMode: =If(varNumNeuma>0,DisplayMode.Edit,DisplayMode.Disabled)
+            Fill: =RGBA(39, 113, 194, 1)
+            Font: =Font.'Open Sans'
+            Height: =61
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            OnSelect: |-
+              =Collect(
+                  DetalleInspeccion,
+                  {
+                      dPLACA: varInspeccionCabezera.placa,
+                      dINSPECTOR: "Alexis Gutierrez",
+                      dUBICACION_NEUMA: varNumNeuma,
+                      dPROMEDIO_NEUMA: lbl_Promedio.Text,
+                      dESTADO: lbl_tipoFinal.Text,
+                      dACCION: lbl_accionFinal.Text,
+                      dFECHACAMBIO: lbl_FechaProyectado.Text,
+                      dM1: m1.Text,
+                      dM2: m2.Text,
+                      dM3: m3.Text,
+                      dM4: m4.Text,
+                      dTOTALNEUMATICOSINSPE: totalInspeccionadas.Text,
+                      dFECHAINSPECCION: Today(),
+                      dHORAINSPECCION: Text(Now(), "HH:mm:ss"),
+                      dTIPOVEHICULO:tipovehiculo,
+                      dUMBRAL:lbl_Umbral.Text,
+                      dDesgaste:VFactorSeguridad
+                  }
+              );
+              Collect(
+                  TotalNeuma,
+                  {numNeuma: varNumNeuma}
+              );
+              Reset(m1);
+              Reset(m2);
+              Reset(m3);
+              Reset(m4);
+              SetFocus(m1);
+              Collect(
+                  DetalleInspeccion1,
+                  {
+                      PLACA: varInspeccionCabezera.placa,
+                      INSPECTOR: "Alexis Gutierrez",
+                      UBICACION_NEUMA: varNumNeuma,
+                      PROMEDIO_NEUMA: lbl_Promedio.Text,
+                      ESTADO: lbl_tipoFinal.Text,
+                      ACCION: lbl_accionFinal.Text,
+                      FECHACAMBIO: lbl_FechaProyectado.Text,
+                      M1: m1.Text,
+                      M2: m2.Text,
+                      M3: m3.Text,
+                      M4: m4.Text,
+                      TOTALNEUMATICOSINSPE: totalInspeccionadas.Text,
+                      FECHAINSPECCION: Today(),
+                      HORAINSPECCION: Text(Now(), "HH:mm:ss"),
+                      TIPOVEHICULO:tipovehiculo
+                  }
+              );
+              Set(varNumNeuma,0)
+            PaddingBottom: =3
+            PaddingLeft: =3
+            PaddingRight: =3
+            PaddingTop: =3
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Size: =19
+            TabIndex: =5
+            Text: ="ALMACENAR"
+            Width: =597
+            X: =670
+            Y: =619
+      - Button9_2:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorA6.C_FondoOscu
+            Color: =ColorA6.C_FondoClaro
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(9, 33, 98, 1)
+            Font: =Font.'Open Sans'
+            Height: =45
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            OnSelect: |
+              =Collect(CabezeraInspeccion,
+              {
+                  Placa:varInspeccionCabezera.placa,
+                  Fecha:Today(),
+                  Neumaticos_Inspe:"6",
+                  Kilometraje:varInspeccionCabezera.kilometraje,
+                  Operacion:"Molino Verde",
+                  tipovehiculo:tipovehiculo
+              }
+              );
+              Clear(TotalNeuma);
+              Set(varNumNeuma,0);
+              Clear(DetalleInspeccion1);
+              ClearCollect(DetalleInspeccion2,DetalleInspeccion);
+              Navigate(sc_InspeccionGuardada)
+            PaddingBottom: =3
+            PaddingLeft: =3
+            PaddingRight: =3
+            PaddingTop: =3
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =33
+            RadiusBottomRight: =33
+            RadiusTopLeft: =33
+            RadiusTopRight: =33
+            Size: =19
+            Text: ="GRABAR"
+            Visible: =If(CountRows(TotalNeuma)>0,true,false)
+            Width: =202
+            X: =1146
+            Y: =15
+      - Label6_8:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            Height: =68
+            Size: =19
+            Text: =varInspeccionCabezera.placa
+            Width: =193
+            X: =658
+            Y: =120
+      - Button8_10:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =Color.LightGray
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(245, 245, 245, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =ColorA6.C_FondoClaro1
+            Font: =Font.'Open Sans'
+            Height: =154
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Text: =
+            Width: =597
+            X: =670
+            Y: =444
+      - lbl_Promedio:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(39, 67, 125, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =93
+            Size: =30
+            Text: |-
+              =//If(CountRows(TotalNeuma)>0;(Value(m1.Text)+Value(m2.Text)+Value(m3.Text)+Value(m4.Text))/Value(totalInspeccionadas.Text);0)
+              /*If(Value(CountRows(TotalNeuma))>0;(Value(m1.Text)+Value(m2.Text)+Value(m3.Text)+Value(m4.Text))/Value(totalInspeccionadas.Text);0)*/
+              Round((Value(m1.Text)+Value(m2.Text)+Value(m3.Text)+Value(m4.Text))/Value(totalInspeccionadas.Text),2)
+            Width: =229
+            Wrap: =false
+            X: =851
+            Y: =476
+      - lbl_Limite:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(54, 176, 75, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =33
+            Size: =11
+            Text: =VLimite
+            Width: =55
+            X: =764
+            Y: =476
+      - Label6_3:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =33
+            Size: =11
+            Text: ="LIMITE"
+            Width: =75
+            X: =689
+            Y: =476
+      - lbl_tipoFinal:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorA6.C_FondoOscu
+            BorderStyle: =BorderStyle.None
+            Color: =ColorA6.C_FondoOscu
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =If(Value(lbl_Umbral.Text)>=0 && Value(lbl_Umbral.Text)<=8,Color.Red,If(Value(lbl_Umbral.Text)>8.01 && Value(lbl_Umbral.Text)<=12,Color.Orange,If(Value(lbl_Umbral.Text)>12.01,Color.Green)))
+            Font: =Font.'Open Sans'
+            Height: =36
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            PaddingBottom: =3
+            PaddingLeft: =3
+            PaddingRight: =3
+            PaddingTop: =3
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Size: =13
+            Text: =If(Value(lbl_Umbral.Text)>=0 && Value(lbl_Umbral.Text)<=8,"CAMBIAR",If(Value(lbl_Umbral.Text)>8.01 && Value(lbl_Umbral.Text)<=12,"PROYECCION",If(Value(lbl_Umbral.Text)>12.01,"OK")))
+            Width: =152
+            X: =1093
+            Y: =504
+      - lbl_Umbral:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(246, 88, 16, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =31
+            Size: =11
+            Text: =Value(lbl_Promedio.Text)-Value(lbl_Limite.Text)
+            Width: =55
+            Wrap: =false
+            X: =764
+            Y: =538
+      - lbl_accionFinal:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorA6.C_FondoOscu
+            BorderStyle: =BorderStyle.None
+            Color: =ColorA6.C_FondoOscu
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =If(Value(lbl_Umbral.Text)<=7,Color.Red,If(Value(lbl_Umbral.Text)>=7 && Value(lbl_Umbral.Text)<=10,Color.Orange,Color.Green))
+            Font: =Font.'Open Sans'
+            Height: =36
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            PaddingBottom: =3
+            PaddingLeft: =3
+            PaddingRight: =3
+            PaddingTop: =3
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Size: =13
+            Text: |
+              =/*If(Value(CountRows(TotalNeuma))>0;If(Value(lbl_Umbral.Text)<=7;"REENCAUCHE";If(Value(lbl_Umbral.Text)>=7 && Value(lbl_Umbral.Text)<=10;"PROXIMO";"BUENO"));"")*/
+              If(Value(lbl_Umbral.Text)<=7,"REENCAUCHE",If(Value(lbl_Umbral.Text)>=7 && Value(lbl_Umbral.Text)<=10,"PROXIMO","BUENO"))
+            Width: =152
+            X: =1094
+            Y: =464
+      - Label6_4:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(246, 88, 16, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =31
+            Size: =11
+            Text: ="UMBRAL"
+            Width: =75
+            X: =689
+            Y: =538
+      - lbl_FechaProyectado:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(202, 202, 202, 1)
+            Font: =Font.'Open Sans'
+            Height: =37
+            Size: =11
+            Text: |-
+              =//If(Value(CountRows(TotalNeuma))>0;DateAdd(Today();Value(lbl_diasproyectados.Text));"")
+              DateAdd(Today(),Value(lbl_diasproyectados.Text))
+            Width: =152
+            X: =1093
+            Y: =547
+      - Label6_9:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            Height: =30
+            Size: =11
+            Text: ="MARGEN"
+            Visible: =false
+            Width: =142
+            X: =1015
+            Y: =738
+      - Label6:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            Text: =CountRows(TotalNeuma)&" de 6"
+            Width: =70
+            X: =1210
+            Y: =134
+      - Button9_3:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorA6.C_FondoOscu
+            BorderStyle: =BorderStyle.None
+            Color: =ColorA6.C_FondoClaro1
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(202, 202, 202, 1)
+            Font: =Font.'Open Sans'
+            Height: =11
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            PaddingBottom: =3
+            PaddingLeft: =3
+            PaddingRight: =3
+            PaddingTop: =3
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Size: =19
+            Text: =
+            Width: =383
+            X: =827
+            Y: =153
+      - Button9_4:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorA6.C_FondoOscu
+            BorderStyle: =BorderStyle.None
+            Color: =ColorA6.C_FondoClaro1
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(39, 113, 194, 1)
+            Font: =Font.'Open Sans'
+            Height: =11
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            PaddingBottom: =3
+            PaddingLeft: =3
+            PaddingRight: =3
+            PaddingTop: =3
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Size: =19
+            Text: =
+            Width: =63.8*CountRows(TotalNeuma)
+            X: =827
+            Y: =153
+      - Label6_6:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            Height: =33
+            Size: =11
+            Text: ="PROMEDIO"
+            Width: =222
+            X: =858
+            Y: =444
+      - Label15:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            Text: =LookUp(DetalleInspeccion1,PLACA=Label6_8 And FECHAINSPECCION=Label11.Text,M1)
+            X: =672
+            Y: =216
+      - Button8_20:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(204, 204, 204, 1)
+            Font: =Font.'Open Sans'
+            Height: =7
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Text: =
+            Visible: =If(tipovehiculo="CARRETA",true,false)
+            Width: =219
+            X: =251
+            Y: =564
+      - Button8_26:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =Color.LightGray
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =If(varNumNeuma=7,Color.Orange,Color.Gray)
+            Font: =Font.'Open Sans'
+            Height: =102
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            OnSelect: |-
+              =Set(varNumNeuma,7);
+              Reset(m1);
+              Reset(m2);
+              Reset(m3);
+              Reset(m4);
+              SetFocus(m1)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Text: ="7"
+            Visible: =If(tipovehiculo="CARRETA",true,false)
+            Width: =68
+            X: =276
+            Y: =147
+      - Button8_27:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =Color.LightGray
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =If(varNumNeuma=8,Color.Orange,Color.Gray)
+            Font: =Font.'Open Sans'
+            Height: =102
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            OnSelect: |-
+              =Set(varNumNeuma,8);
+              Reset(m1);
+              Reset(m2);
+              Reset(m3);
+              Reset(m4);
+              SetFocus(m1)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Text: ="8"
+            Visible: =If(tipovehiculo="CARRETA",true,false)
+            Width: =68
+            X: =374
+            Y: =147
+      - Button8_28:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(204, 204, 204, 1)
+            Font: =Font.'Open Sans'
+            Height: =7
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Text: =
+            Visible: =If(tipovehiculo="CARRETA",true,false)
+            Width: =219
+            X: =251
+            Y: =451
+      - Button8_29:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(204, 204, 204, 1)
+            Font: =Font.'Open Sans'
+            Height: =7
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Text: =
+            Visible: =If(tipovehiculo="CARRETA",true,false)
+            Width: =219
+            X: =258
+            Y: =331
+      - Button8_21:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =Color.LightGray
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =If(varNumNeuma=6,Color.Orange,RGBA(146, 183, 201, 1))
+            Font: =Font.'Open Sans'
+            Height: =102
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            OnSelect: |-
+              =Set(varNumNeuma,6);
+              Reset(m1);
+              Reset(m2);
+              Reset(m3);
+              Reset(m4);
+              SetFocus(m1)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Text: ="6"
+            Visible: =If(tipovehiculo="CARRETA",true,false)
+            Width: =68
+            X: =441
+            Y: =520
+      - Button8_22:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =Color.LightGray
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =If(varNumNeuma=2,Color.Orange,RGBA(146, 183, 201, 1))
+            Font: =Font.'Open Sans'
+            Height: =102
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            OnSelect: |-
+              =Set(varNumNeuma,2);
+              Reset(m1);
+              Reset(m2);
+              Reset(m3);
+              Reset(m4);
+              SetFocus(m1)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Text: ="2"
+            Visible: =If(tipovehiculo="CARRETA",true,false)
+            Width: =68
+            X: =214
+            Y: =401
+      - Button8_23:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =Color.LightGray
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =If(varNumNeuma=5,Color.Orange,RGBA(146, 183, 201, 1))
+            Font: =Font.'Open Sans'
+            Height: =102
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            OnSelect: |-
+              =Set(varNumNeuma,5);
+              Reset(m1);
+              Reset(m2);
+              Reset(m3);
+              Reset(m4);
+              SetFocus(m1)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Text: ="5"
+            Visible: =If(tipovehiculo="CARRETA",true,false)
+            Width: =68
+            X: =442
+            Y: =401
+      - Button8_24:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =Color.LightGray
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =If(varNumNeuma=1,Color.Orange,RGBA(146, 183, 201, 1))
+            Font: =Font.'Open Sans'
+            Height: =102
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            OnSelect: |-
+              =Set(varNumNeuma,1);
+              Reset(m1);
+              Reset(m2);
+              Reset(m3);
+              Reset(m4);
+              SetFocus(m1)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Text: ="1"
+            Visible: =If(tipovehiculo="CARRETA",true,false)
+            Width: =68
+            X: =214
+            Y: =285
+      - Button8_25:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =Color.LightGray
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =If(varNumNeuma=4,Color.Orange,RGBA(146, 183, 201, 1))
+            Font: =Font.'Open Sans'
+            Height: =102
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            OnSelect: |-
+              =Set(varNumNeuma,4);
+              Reset(m1);
+              Reset(m2);
+              Reset(m3);
+              Reset(m4);
+              SetFocus(m1)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Text: ="4"
+            Visible: =If(tipovehiculo="CARRETA",true,false)
+            Width: =68
+            X: =440
+            Y: =282
+      - Button8_18:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =Color.LightGray
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =If(varNumNeuma=3,Color.Orange,RGBA(146, 183, 201, 1))
+            Font: =Font.'Open Sans'
+            Height: =102
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            OnSelect: |-
+              =Set(varNumNeuma,3);
+              Reset(m1);
+              Reset(m2);
+              Reset(m3);
+              Reset(m4);
+              SetFocus(m1)
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Text: ="3"
+            Visible: =If(tipovehiculo="CARRETA",true,false)
+            Width: =68
+            X: =214
+            Y: =520
+      - Label7_1:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(10, 88, 245, 1)
+            Font: =Font.Arial
+            Size: =11
+            Text: ="Volver al menú"
+            X: =138
+            Y: =77
+      - Icon2_3:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(10, 88, 245, 1)
+            Height: =31
+            Icon: =Icon.ChevronLeft
+            OnSelect: =Navigate(Incio)
+            PaddingBottom: =9
+            PaddingRight: =300
+            PaddingTop: =9
+            Width: =333
+            X: =106
+            Y: =82
+      - Image2_4:
+          Control: Image@2.2.3
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =33
+            Image: =check
+            Visible: =If(LookUp(DetalleInspeccion1,UBICACION_NEUMA=5,1)=1,true,false)
+            Width: =39
+            X: =485
+            Y: =425
+      - Image2_3:
+          Control: Image@2.2.3
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =33
+            Image: =check
+            Visible: =If(LookUp(DetalleInspeccion1,UBICACION_NEUMA=6,1)=1,true,false)
+            Width: =39
+            X: =485
+            Y: =551
+      - Image2_2:
+          Control: Image@2.2.3
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =33
+            Image: =check
+            Visible: =If(LookUp(DetalleInspeccion1,UBICACION_NEUMA=3,1)=1,true,false)
+            Width: =39
+            X: =188
+            Y: =551
+      - Image2_1:
+          Control: Image@2.2.3
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =33
+            Image: =check
+            Visible: =If(LookUp(DetalleInspeccion1,UBICACION_NEUMA=2,1)=1,true,false)
+            Width: =39
+            X: =188
+            Y: =425
+      - Image2:
+          Control: Image@2.2.3
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =33
+            Image: =check
+            Visible: =If(LookUp(DetalleInspeccion1,UBICACION_NEUMA=1,1)=1,true,false)
+            Width: =39
+            X: =If(tipovehiculo="CARRETA",193,188)
+            Y: =If(tipovehiculo="CARRETA",321,236)
+      - Image2_5:
+          Control: Image@2.2.3
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =33
+            Image: =check
+            Visible: =If(LookUp(DetalleInspeccion1,UBICACION_NEUMA=4,1)=1,true,false)
+            Width: =39
+            X: =If(tipovehiculo="CARRETA",488,485)
+            Y: =If(tipovehiculo="CARRETA",313,239)
+      - Button1:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(56, 96, 178, 1)
+            Font: =Font.'Open Sans'
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            OnSelect: |-
+              =ForAll(
+                  DetalleInspeccion,
+                  Patch(
+                      tab_sistesmaInspeccionNeuma2,
+                      Defaults(tab_sistesmaInspeccionNeuma2),
+                      {
+                          Title:dPLACA,
+                          INSPECTOR:dINSPECTOR,
+                          UBICACION_NEUMA:Value(dUBICACION_NEUMA),
+                          ESTADO:dESTADO,
+                          UMBRAL:Value(dUMBRAL),
+                          ACCION:dACCION,
+                          FECHAINSPECCION:dFECHAINSPECCION,
+                          FECHACAMBIO:dFECHACAMBIO,
+                          M1:Value(dM1),
+                          M2:Value(dM2),
+                          M3:Value(dM3),
+                          M4:Value(dM4),
+                          TOTALNEUMATICOSINSPE:Value(dTOTALNEUMATICOSINSPE),
+                          TIPOVEHICULO:dTIPOVEHICULO,
+                          DESGASTE_DIA:Value(dDesgaste),
+                          HORAINSPECCION:dHORAINSPECCION
+                      }
+                  )
+              )
+
+              /*
+              INSPECTOR:dINSPECTOR;
+              UBICACION_NEUMA:dUBICACION_NEUMA;
+              PROMEDIO_NEUMA:dPROMEDIO_NEUMA;
+              ESTADO:dESTADO;
+              UMBRAL:dUMBRAL;
+              ACCION:dACCION;
+              FECHACAMBIO:dFECHACAMBIO;
+              M1:dM1;
+              M2:dM2;
+              M3:dM3;
+              M4:dM4;
+              TOTALNEUMATICOSINSPE:dTOTALNEUMATICOSINSPE;
+              FECHAINSPECCION:dFECHAINSPECCION;
+              HORAINSPECCION:dHORAINSPECCION;
+              TIPOVEHICULO:dTIPOVEHICULO;
+              DESGASTE_DIA:dDESGASTE_DIA;
+              PROYECCION_DIAS:dPROYECCION_DIAS;
+              REENCAUCHE_LIMITE:dREENCAUCHE_LIMITE;
+              RECORRIDOS:dRECORRIDOS*/
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            Visible: =false
+            X: =30
+            Y: =650

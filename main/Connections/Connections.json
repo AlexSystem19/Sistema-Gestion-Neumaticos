@@ -1,0 +1,31 @@
+{
+  "1a1f8d3f-5c23-43cb-a205-b11217d7431a": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://conn-afd-prod-endpoint-bmc9bqahasf3grgk.b01.azurefd.net/v1.0.1769/1.0.1769.4352/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://navisafsac-my.sharepoint.com/personal/usuario_app_navisafsac_onmicrosoft_com/": {
+        "dataSources": {
+          "tab_sistesmaInspeccionNeuma2": {
+            "tableName": "54bac782-1991-4737-acc1-fcb8581e70b4"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "tab_sistesmaInspeccionNeuma2"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "1a1f8d3f-5c23-43cb-a205-b11217d7431a"
+  }
+}

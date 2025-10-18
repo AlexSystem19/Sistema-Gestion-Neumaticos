@@ -1,0 +1,334 @@
+sc_Buscar As screen:
+    Fill: =ColorA6.C_FondoClaro1
+    OnVisible: =ClearCollect(DetalleListaLocal2,DetalleListaLocal1)
+
+    Container1_9 As groupContainer.manualLayoutContainer:
+        BorderStyle: =BorderStyle.None
+        Height: =673
+        RadiusBottomLeft: =11
+        RadiusBottomRight: =11
+        RadiusTopLeft: =11
+        RadiusTopRight: =11
+        Width: =Parent.Width
+        Y: =95
+        ZIndex: =1
+
+        "Gallery2_3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            '#CopilotOverlayLabel': ="Filtrada"
+            DelayItemLoading: =true
+            Height: =483
+            Items: =Search(DetalleListaLocal2,TextInput1.Text,dPLACA)
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplatePadding: =0
+            TemplateSize: =104
+            Width: =874
+            X: =445
+            Y: =190
+            ZIndex: =5
+
+            Container3_7 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.Regular
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =96
+                RadiusBottomLeft: =19
+                RadiusBottomRight: =19
+                RadiusTopLeft: =19
+                RadiusTopRight: =19
+                Width: =851
+                X: =4
+                ZIndex: =1
+
+            Button5_7 As button:
+                Color: =RGBA(0, 0, 0, 1)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =69
+                OnSelect: =Select(Parent)
+                Size: =33
+                Text: =ThisItem.dPLACA
+                Width: =236
+                X: =27
+                Y: =13
+                ZIndex: =2
+
+            Button5_8 As button:
+                Align: =Align.Right
+                AutoDisableOnSelect: =false
+                Color: =RGBA(0, 0, 0, 1)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =64
+                OnSelect: =Select(Parent)
+                Size: =33
+                Text: =Round(ThisItem.dPROMEDIO_NEUMA,2)
+                Width: =143
+                X: =557
+                Y: =13
+                ZIndex: =3
+
+            Button5_9 As button:
+                AutoDisableOnSelect: =false
+                Color: =If(ThisItem.dACCION="REENCAUCHE",Color.Yellow,Color.Black)
+                Fill: =If(ThisItem.dACCION="REENCAUCHE",Color.Red,If(ThisItem.dACCION="BUENO",Color.Yellow,If(ThisItem.dACCION="PROXIMO",Color.Orange,Color.Gray)))
+                Height: =25
+                OnSelect: =Select(Parent)
+                PaddingBottom: =3
+                PaddingLeft: =3
+                PaddingRight: =3
+                PaddingTop: =3
+                Size: =9
+                Text: =ThisItem.dACCION
+                Width: =119
+                X: =716
+                Y: =36
+                ZIndex: =4
+
+            Label1_11 As label:
+                Align: =Align.Center
+                FontWeight: =FontWeight.Bold
+                Height: =33
+                OnSelect: =Select(Parent)
+                Size: =9
+                Text: =ThisItem.dUBICACION_NEUMA
+                Width: =44
+                X: =4
+                Y: =31
+                ZIndex: =5
+
+            Label1_12 As label:
+                Align: =Align.Center
+                Color: =RGBA(153, 153, 153, 1)
+                Height: =35
+                Italic: =true
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: =ThisItem.dM1
+                Width: =69
+                X: =263
+                Y: =30
+                ZIndex: =6
+
+            Label1_13 As label:
+                Align: =Align.Center
+                Color: =RGBA(153, 153, 153, 1)
+                Height: =35
+                Italic: =true
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: =ThisItem.dM1
+                Width: =69
+                X: =338
+                Y: =30
+                ZIndex: =7
+
+            Label1_14 As label:
+                Align: =Align.Center
+                Color: =RGBA(153, 153, 153, 1)
+                Height: =35
+                Italic: =true
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: =ThisItem.dM1
+                Width: =69
+                X: =413
+                Y: =30
+                ZIndex: =8
+
+            Label1_15 As label:
+                Align: =Align.Center
+                Color: =RGBA(153, 153, 153, 1)
+                Height: =35
+                Italic: =true
+                OnSelect: =Select(Parent)
+                Size: =16
+                Text: =ThisItem.dM1
+                Width: =69
+                X: =488
+                Y: =30
+                ZIndex: =9
+
+            Label1_16 As label:
+                Height: =30
+                OnSelect: =Select(Parent)
+                Size: =11
+                Text: =ThisItem.dFECHAINSPECCION
+                Width: =190
+                X: =48
+                ZIndex: =10
+
+        "Gallery2_4 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+            '#CopilotOverlayLabel': ="Filtrada"
+            DelayItemLoading: =true
+            Height: =483
+            Items: =Distinct(Search(DetalleListaLocal1,TextInput1.Text,dPLACA),dPLACA)
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            OnSelect: =
+            TemplatePadding: =0
+            TemplateSize: =104
+            Width: =330
+            X: =104
+            Y: =190
+            ZIndex: =16
+
+            Container3_8 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.Regular
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =96
+                RadiusBottomLeft: =19
+                RadiusBottomRight: =19
+                RadiusTopLeft: =19
+                RadiusTopRight: =19
+                Width: =318
+                X: =4
+                ZIndex: =17
+
+            Button5_10 As button:
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =69
+                HoverColor: =RGBA(9, 33, 98, 1)
+                HoverFill: =Color.Transparent
+                OnSelect: =ClearCollect(DetalleListaLocal2,Filter(DetalleListaLocal1,dPLACA=ThisItem.Value))
+                PressedColor: =RGBA(54, 176, 75, 1)
+                PressedFill: =Color.Transparent
+                Size: =33
+                Text: =ThisItem.Value
+                Width: =236
+                X: =45
+                Y: =13
+                ZIndex: =18
+
+    Container3_6 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Regular
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =118
+        RadiusBottomLeft: =19
+        RadiusBottomRight: =19
+        RadiusTopLeft: =19
+        RadiusTopRight: =19
+        Width: =1195
+        X: =106
+        Y: =120
+        ZIndex: =2
+
+        Label3_3 As label:
+            FontWeight: =FontWeight.Bold
+            PaddingBottom: =3
+            PaddingLeft: =33
+            PaddingRight: =3
+            PaddingTop: =3
+            Size: =19
+            Text: ="Buscar Inspecciones"
+            Width: =Parent.Width
+            Y: =10
+            ZIndex: =1
+
+        TextInput1 As text:
+            Align: =Align.Center
+            BorderColor: =RGBA(204, 204, 204, 1)
+            Default: =
+            Height: =51
+            HintText: ="Buscar por Placa 🔍"
+            RadiusBottomLeft: =19
+            RadiusBottomRight: =19
+            RadiusTopLeft: =19
+            RadiusTopRight: =19
+            Width: =541
+            X: =625
+            Y: =30
+            ZIndex: =5
+
+        Button9 As button:
+            Color: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 255, 0, 1)
+            OnSelect: =ClearCollect(DetalleListaLocal2,Filter(DetalleListaLocal1,dACCION="BUENO"))
+            RadiusBottomLeft: =16
+            RadiusBottomRight: =16
+            RadiusTopLeft: =16
+            RadiusTopRight: =16
+            Size: =13
+            Text: |-
+                ="BUENO: "&CountRows(Filter(DetalleListaLocal1,dACCION="BUENO"))
+                //If(Value(lbl_Umbral.Text)<=7;"REENCAUCHE";If(Value(lbl_Umbral.Text)>=7 && Value(lbl_Umbral.Text)<=10;"PROXIMO";"BUENO"))
+            X: =35
+            Y: =60
+            ZIndex: =6
+
+        Button9_5 As button:
+            Color: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(255, 191, 0, 1)
+            OnSelect: =ClearCollect(DetalleListaLocal2,Filter(DetalleListaLocal1,dACCION="PROXIMO"))
+            RadiusBottomLeft: =16
+            RadiusBottomRight: =16
+            RadiusTopLeft: =16
+            RadiusTopRight: =16
+            Size: =13
+            Text: |-
+                ="PROXIMO : "&CountRows(Filter(DetalleListaLocal1,dACCION="PROXIMO"))
+            X: =221
+            Y: =60
+            ZIndex: =7
+
+        Button9_6 As button:
+            Fill: =RGBA(168, 0, 0, 1)
+            OnSelect: =ClearCollect(DetalleListaLocal2,Filter(DetalleListaLocal1,dACCION="REENCAUCHE"))
+            RadiusBottomLeft: =16
+            RadiusBottomRight: =16
+            RadiusTopLeft: =16
+            RadiusTopRight: =16
+            Size: =13
+            Text: |-
+                ="REENCAUCHE : "&CountRows(Filter(DetalleListaLocal1,dACCION="REENCAUCHE"))
+            Width: =183
+            X: =406
+            Y: =60
+            ZIndex: =8
+
+    Container1_8 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Regular
+        Height: =75
+        Width: =1366
+        ZIndex: =3
+
+    Button2_5 As button:
+        Align: =Align.Left
+        Color: =RGBA(9, 33, 98, 1)
+        DisabledColor: =RGBA(9, 33, 98, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =75
+        PaddingBottom: =3
+        PaddingLeft: =33
+        PaddingRight: =3
+        PaddingTop: =3
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: ="A6 | Sistema de Inspección Neumaticos"
+        Width: =1366
+        ZIndex: =4
+
+    Label7_5 As label:
+        Color: =RGBA(10, 88, 245, 1)
+        Font: =Font.Arial
+        Size: =11
+        Text: ="Volver al menú"
+        X: =138
+        Y: =75
+        ZIndex: =5
+
+    Icon2_2 As icon:
+        Color: =RGBA(10, 88, 245, 1)
+        Height: =31
+        Icon: =Icon.ChevronLeft
+        OnSelect: =Navigate(Incio)
+        PaddingBottom: =9
+        PaddingRight: =300
+        PaddingTop: =9
+        Width: =333
+        X: =106
+        Y: =80
+        ZIndex: =6
+

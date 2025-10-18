@@ -1,0 +1,287 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  sc_NuevaInspeccion_Datos:
+    Properties:
+      Fill: =ColorA6.C_FondoClaro1
+      LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+      OnVisible: =Set(tipovehiculo,"A")
+    Children:
+      - Container1_1:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            DropShadow: =DropShadow.Regular
+            Height: =75
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =1366
+      - Button2_1:
+          Control: Classic/Button@2.2.0
+          Properties:
+            Align: =Align.Left
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(9, 33, 98, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(9, 33, 98, 1)
+            DisabledFill: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            Height: =75
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            PaddingBottom: =3
+            PaddingLeft: =33
+            PaddingRight: =3
+            PaddingTop: =3
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Text: ="A6 | Sistema de Inspección Neumaticos"
+            Width: =1366
+      - Container1_2:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            BorderStyle: =BorderStyle.None
+            DropShadow: =DropShadow.None
+            Height: =673
+            RadiusBottomLeft: =11
+            RadiusBottomRight: =11
+            RadiusTopLeft: =11
+            RadiusTopRight: =11
+            Width: =Parent.Width
+            Y: =95
+          Children:
+            - Container2:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  BorderColor: =RGBA(230, 230, 230, 1)
+                  BorderThickness: =1
+                  DropShadow: =DropShadow.Semilight
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =582
+                  RadiusBottomLeft: =16
+                  RadiusBottomRight: =16
+                  RadiusTopLeft: =16
+                  RadiusTopRight: =16
+                  Width: =698
+                  X: =350
+                  Y: =40
+                Children:
+                  - Label3:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Bold
+                        Height: =92
+                        Size: =33
+                        Text: ="Datos de la Inspección"
+                        Width: =616
+                        X: =41
+                  - Label4:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Font: =Font.'Open Sans'
+                        Size: =11
+                        Text: ="Placa del Vehículo"
+                        Width: =617
+                        X: =40
+                        Y: =92
+                  - lbl_placa:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Default: =
+                        Fill: =ColorA6.C_FondoClaro1
+                        Font: =Font.'Open Sans'
+                        Height: =58
+                        HintText: ="ABC-123"
+                        HoverBorderColor: =RGBA(0, 18, 107, 1)
+                        HoverFill: =RGBA(186, 202, 226, 1)
+                        MaxLength: =7
+                        RadiusBottomLeft: =19
+                        RadiusBottomRight: =19
+                        RadiusTopLeft: =19
+                        RadiusTopRight: =19
+                        Width: =616
+                        X: =40
+                        Y: =132
+                  - Label4_1:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Font: =Font.'Open Sans'
+                        Size: =11
+                        Text: ="Kilometraje"
+                        Width: =617
+                        X: =39
+                        Y: =206
+                  - lbl_kilometraje:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Default: =
+                        Fill: =ColorA6.C_FondoClaro1
+                        Font: =Font.'Open Sans'
+                        Format: =TextFormat.Number
+                        Height: =58
+                        HintText: ="0123"
+                        HoverBorderColor: =RGBA(0, 18, 107, 1)
+                        HoverFill: =RGBA(186, 202, 226, 1)
+                        MaxLength: =8
+                        RadiusBottomLeft: =19
+                        RadiusBottomRight: =19
+                        RadiusTopLeft: =19
+                        RadiusTopRight: =19
+                        Width: =616
+                        X: =39
+                        Y: =246
+                  - Button6:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =ColorFade(Self.Fill, -15%)
+                        Color: =If(tipovehiculo="TRACTO",ColorA6.C_FondoClaro,Color.White)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        Fill: =If(tipovehiculo="TRACTO",Color.Orange,ColorA6.C_FondoOscu)
+                        Font: =Font.'Open Sans'
+                        Height: =101
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                        OnSelect: =Set(tipovehiculo,"TRACTO")
+                        PaddingBottom: =3
+                        PaddingLeft: =3
+                        PaddingRight: =3
+                        PaddingTop: =3
+                        PressedBorderColor: =Self.Fill
+                        PressedColor: =Self.Fill
+                        PressedFill: =Self.Color
+                        RadiusBottomLeft: =16
+                        RadiusBottomRight: =16
+                        RadiusTopLeft: =16
+                        RadiusTopRight: =16
+                        Size: =19
+                        Text: |-
+                          ="🚛
+                          Tracto"
+                        Width: =285
+                        X: =40
+                        Y: =355
+                  - Button6_1:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =ColorFade(Self.Fill, -15%)
+                        Color: =If(tipovehiculo="TRACTO",ColorA6.C_FondoClaro,Color.White)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        Fill: =If(tipovehiculo="CARRETA",Color.Orange,ColorA6.C_FondoOscu)
+                        Font: =Font.'Open Sans'
+                        Height: =101
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                        OnSelect: =Set(tipovehiculo,"CARRETA")
+                        PaddingBottom: =3
+                        PaddingLeft: =3
+                        PaddingRight: =3
+                        PaddingTop: =3
+                        PressedBorderColor: =Self.Fill
+                        PressedColor: =Self.Fill
+                        PressedFill: =Self.Color
+                        RadiusBottomLeft: =16
+                        RadiusBottomRight: =16
+                        RadiusTopLeft: =16
+                        RadiusTopRight: =16
+                        Size: =19
+                        Text: |-
+                          ="🚚
+                          Carreta"
+                        Width: =289
+                        X: =366
+                        Y: =355
+                  - Button7:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =ColorFade(Self.Fill, -15%)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =If(tipovehiculo="TRACTO" Or tipovehiculo="CARRETA",DisplayMode.Edit,DisplayMode.Disabled)
+                        Fill: =RGBA(10, 88, 245, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =74
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                        OnSelect: |-
+                          =Navigate(sc_NuevaInspeccion_Unidad,ScreenTransition.Cover);
+                          Set(varInspeccionCabezera,
+                          {
+                              placa:lbl_placa.Text,
+                              kilometraje:lbl_kilometraje.Text,
+                              Tipounidad:tipovehiculo
+                          }
+                          )
+                        PressedBorderColor: =Self.Fill
+                        PressedColor: =Self.Fill
+                        PressedFill: =Self.Color
+                        RadiusBottomLeft: =16
+                        RadiusBottomRight: =16
+                        RadiusTopLeft: =16
+                        RadiusTopRight: =16
+                        Size: =11
+                        Text: ="INICIAR INSPECCIIÓN"
+                        Width: =616
+                        X: =41
+                        Y: =481
+                  - Label4_2:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Font: =Font.'Open Sans'
+                        Size: =11
+                        Text: ="Tipico de vehículo"
+                        Width: =617
+                        X: =40
+                        Y: =315
+      - Label7:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(10, 88, 245, 1)
+            Font: =Font.Arial
+            Size: =11
+            Text: ="Volver al menú"
+            X: =386
+            Y: =90
+      - Icon2:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(10, 88, 245, 1)
+            Height: =31
+            Icon: =Icon.ChevronLeft
+            OnSelect: =Navigate(Incio)
+            PaddingBottom: =9
+            PaddingRight: =300
+            PaddingTop: =9
+            Width: =333
+            X: =354
+            Y: =95

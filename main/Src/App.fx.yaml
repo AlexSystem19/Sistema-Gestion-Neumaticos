@@ -1,0 +1,22 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |-
+        =Set(ColorA6,
+        {
+            C_FondoOscu:RGBA(23, 63, 82, 1),
+            C_FuenteAzulClaro:RGBA(16, 150, 216, 1),
+            C_FondoClaro:RGBA(255, 255, 255, 1),
+            C_FondoClaro1:RGBA(245, 245, 245, 1),
+            C_FondoClaroVivo:RGBA(10, 88, 245, 1)
+        });
+        LoadData(DetalleListaLocal,"DetalleListaLocalOffline");
+        LoadData(DetalleListaLocal1,"DetalleListaLocalOffline1");
+    Theme: =PowerAppsTheme
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+

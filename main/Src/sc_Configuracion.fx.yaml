@@ -1,0 +1,479 @@
+sc_Configuracion As screen:
+    Fill: =ColorA6.C_FondoClaro1
+
+    Container1_11 As groupContainer.manualLayoutContainer:
+        BorderStyle: =BorderStyle.None
+        Height: =673
+        RadiusBottomLeft: =11
+        RadiusBottomRight: =11
+        RadiusTopLeft: =11
+        RadiusTopRight: =11
+        Width: =Parent.Width
+        Y: =95
+        ZIndex: =1
+
+        Container2_2 As groupContainer.manualLayoutContainer:
+            BorderColor: =RGBA(230, 230, 230, 1)
+            BorderThickness: =1
+            DropShadow: =DropShadow.Semilight
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =605
+            RadiusBottomLeft: =16
+            RadiusBottomRight: =16
+            RadiusTopLeft: =16
+            RadiusTopRight: =16
+            Width: =769
+            X: =70
+            Y: =40
+            ZIndex: =1
+
+            Label3_4 As label:
+                FontWeight: =FontWeight.Bold
+                PaddingBottom: =3
+                PaddingLeft: =33
+                PaddingRight: =3
+                PaddingTop: =3
+                Size: =19
+                Text: ="Configuración"
+                Width: =769
+                Y: =19
+                ZIndex: =3
+
+            Button8_13 As button:
+                BorderColor: =Color.LightGray
+                BorderStyle: =BorderStyle.None
+                Color: =RGBA(245, 245, 245, 1)
+                DisplayMode: =DisplayMode.Disabled
+                Fill: =ColorA6.C_FondoClaro1
+                Height: =72
+                RadiusBottomLeft: =19
+                RadiusBottomRight: =19
+                RadiusTopLeft: =19
+                RadiusTopRight: =19
+                Text: =
+                Width: =728
+                X: =20
+                Y: =97
+                ZIndex: =5
+
+            Label8_4 As label:
+                Color: =RGBA(128, 128, 128, 1)
+                Height: =38
+                Text: |-
+                    ="DNI : 9999999"
+                VerticalAlign: =VerticalAlign.Top
+                Width: =161
+                X: =46
+                Y: =114
+                ZIndex: =6
+
+            Button6_6 As button:
+                Fill: =RGBA(168, 0, 0, 1)
+                Height: =57
+                OnSelect: =Back()
+                RadiusBottomLeft: =16
+                RadiusBottomRight: =16
+                RadiusTopLeft: =16
+                RadiusTopRight: =16
+                Size: =11
+                Text: ="Regresar"
+                Width: =728
+                X: =20
+                Y: =531
+                ZIndex: =10
+
+            Label8_22 As label:
+                Color: =RGBA(9, 33, 98, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                Text: ="Usuarios Actual"
+                VerticalAlign: =VerticalAlign.Top
+                Width: =161
+                X: =31
+                Y: =67
+                ZIndex: =17
+
+            Label8_5 As label:
+                Color: =RGBA(128, 128, 128, 1)
+                Height: =38
+                Text: |-
+                    ="USUARIO : HUGO ALEXISG."
+                VerticalAlign: =VerticalAlign.Top
+                Width: =306
+                Wrap: =false
+                X: =216
+                Y: =114
+                ZIndex: =18
+
+            Label8_14 As label:
+                Color: =RGBA(128, 128, 128, 1)
+                Height: =38
+                Text: |-
+                    ="CARGO : INGENIERO DE DATOS"
+                VerticalAlign: =VerticalAlign.Top
+                Width: =185
+                Wrap: =false
+                X: =540
+                Y: =114
+                ZIndex: =19
+
+            Label10 As label:
+                Fill: =RGBA(230, 230, 230, 1)
+                Height: =2
+                Text: =
+                Width: =611
+                X: =79
+                Y: =184
+                ZIndex: =20
+
+            Label8_23 As label:
+                Color: =RGBA(9, 33, 98, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                Text: ="Datos Almacenados"
+                VerticalAlign: =VerticalAlign.Top
+                Width: =247
+                X: =31
+                Y: =199
+                ZIndex: =21
+
+            Button8_14 As button:
+                Align: =Align.Left
+                BorderColor: =Color.LightGray
+                BorderStyle: =BorderStyle.None
+                Color: =RGBA(50, 86, 160, 1)
+                DisabledColor: =RGBA(9, 33, 98, 1)
+                DisplayMode: =DisplayMode.Disabled
+                Fill: =ColorA6.C_FondoClaro1
+                Height: =46
+                OnSelect: =
+                PaddingBottom: =3
+                PaddingLeft: =30
+                PaddingRight: =3
+                PaddingTop: =3
+                RadiusBottomLeft: =19
+                RadiusBottomRight: =19
+                RadiusTopLeft: =19
+                RadiusTopRight: =19
+                Size: =13
+                Text: ="Inspecciones Locales"
+                Width: =728
+                X: =20
+                Y: =236
+                ZIndex: =22
+
+            Button8_15 As button:
+                Align: =Align.Left
+                BorderColor: =Color.LightGray
+                BorderStyle: =BorderStyle.None
+                Color: =RGBA(50, 86, 160, 1)
+                DisabledColor: =RGBA(9, 33, 98, 1)
+                DisplayMode: =DisplayMode.Disabled
+                Fill: =ColorA6.C_FondoClaro1
+                Height: =46
+                PaddingBottom: =3
+                PaddingLeft: =30
+                PaddingRight: =3
+                PaddingTop: =3
+                RadiusBottomLeft: =19
+                RadiusBottomRight: =19
+                RadiusTopLeft: =19
+                RadiusTopRight: =19
+                Size: =13
+                Text: ="Pendientes Sincronizacion"
+                Width: =728
+                X: =20
+                Y: =295
+                ZIndex: =23
+
+            Label10_1 As label:
+                Fill: =RGBA(230, 230, 230, 1)
+                Height: =2
+                Text: =
+                Width: =611
+                X: =79
+                Y: =361
+                ZIndex: =24
+
+            Label8_24 As label:
+                Color: =RGBA(9, 33, 98, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                Size: =11
+                Text: ="Datos Almacenados"
+                VerticalAlign: =VerticalAlign.Top
+                Width: =247
+                X: =31
+                Y: =374
+                ZIndex: =25
+
+            Button8_16 As button:
+                Align: =Align.Left
+                BorderColor: =Color.LightGray
+                BorderStyle: =BorderStyle.None
+                Color: =RGBA(50, 86, 160, 1)
+                DisabledColor: =RGBA(9, 33, 98, 1)
+                DisplayMode: =DisplayMode.Disabled
+                Fill: =ColorA6.C_FondoClaro1
+                Height: =46
+                PaddingBottom: =3
+                PaddingLeft: =30
+                PaddingRight: =3
+                PaddingTop: =3
+                RadiusBottomLeft: =19
+                RadiusBottomRight: =19
+                RadiusTopLeft: =19
+                RadiusTopRight: =19
+                Size: =13
+                Text: ="Version"
+                Width: =728
+                X: =20
+                Y: =411
+                ZIndex: =26
+
+            Button8_17 As button:
+                Align: =Align.Left
+                BorderColor: =Color.LightGray
+                BorderStyle: =BorderStyle.None
+                Color: =RGBA(50, 86, 160, 1)
+                DisabledColor: =RGBA(9, 33, 98, 1)
+                DisplayMode: =DisplayMode.Disabled
+                Fill: =ColorA6.C_FondoClaro1
+                Height: =46
+                PaddingBottom: =3
+                PaddingLeft: =30
+                PaddingRight: =3
+                PaddingTop: =3
+                RadiusBottomLeft: =19
+                RadiusBottomRight: =19
+                RadiusTopLeft: =19
+                RadiusTopRight: =19
+                Size: =13
+                Text: ="Estado de Conexion"
+                Width: =728
+                X: =20
+                Y: =470
+                ZIndex: =27
+
+            Label14 As label:
+                Align: =Align.Center
+                FontWeight: =FontWeight.Bold
+                PaddingBottom: =3
+                PaddingLeft: =3
+                PaddingRight: =33
+                PaddingTop: =3
+                Text: =CountRows(DetalleListaLocal1)
+                Width: =95
+                X: =653
+                Y: =239
+                ZIndex: =28
+
+            Label14_1 As label:
+                Align: =Align.Center
+                FontWeight: =FontWeight.Bold
+                PaddingBottom: =3
+                PaddingLeft: =3
+                PaddingRight: =33
+                PaddingTop: =3
+                Text: =CountRows(DetalleInspeccion)
+                Width: =95
+                X: =653
+                Y: =301
+                ZIndex: =29
+
+            Label14_2 As label:
+                Align: =Align.Right
+                FontWeight: =FontWeight.Bold
+                PaddingBottom: =3
+                PaddingLeft: =3
+                PaddingRight: =33
+                PaddingTop: =3
+                Text: =App.StudioVersion
+                Width: =296
+                X: =452
+                Y: =417
+                ZIndex: =30
+
+            Label14_3 As label:
+                Align: =Align.Right
+                Color: =If(Connection.Connected,Color.Green,Color.Red)
+                FontWeight: =FontWeight.Bold
+                PaddingBottom: =3
+                PaddingLeft: =3
+                PaddingRight: =33
+                PaddingTop: =3
+                Text: =If(Connection.Connected,"Conectado","Sin Conexion")
+                Width: =296
+                X: =452
+                Y: =470
+                ZIndex: =31
+
+        Container2_4 As groupContainer.manualLayoutContainer:
+            BorderColor: =RGBA(230, 230, 230, 1)
+            BorderThickness: =1
+            DropShadow: =DropShadow.Semilight
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =605
+            RadiusBottomLeft: =16
+            RadiusBottomRight: =16
+            RadiusTopLeft: =16
+            RadiusTopRight: =16
+            Width: =449
+            X: =875
+            Y: =40
+            ZIndex: =2
+
+            Label3_6 As label:
+                FontWeight: =FontWeight.Bold
+                PaddingBottom: =3
+                PaddingLeft: =33
+                PaddingRight: =3
+                PaddingTop: =3
+                Size: =19
+                Text: ="Variables"
+                Width: =439
+                X: =10
+                Y: =10
+                ZIndex: =1
+
+            Button8_30 As button:
+                BorderColor: =Color.LightGray
+                BorderStyle: =BorderStyle.None
+                Color: =RGBA(245, 245, 245, 1)
+                DisplayMode: =DisplayMode.Disabled
+                Fill: =ColorA6.C_FondoClaro1
+                Height: =227
+                RadiusBottomLeft: =19
+                RadiusBottomRight: =19
+                RadiusTopLeft: =19
+                RadiusTopRight: =19
+                Text: =
+                Width: =398
+                X: =31
+                Y: =97
+                ZIndex: =2
+
+            TextInput2 As text:
+                Align: =Align.Center
+                Default: ="0.10"
+                Width: =154
+                X: =243
+                Y: =113
+                ZIndex: =20
+
+            Label8_15 As label:
+                Color: =RGBA(128, 128, 128, 1)
+                Height: =60
+                Text: ="Factor de seguridad"
+                VerticalAlign: =VerticalAlign.Top
+                Width: =161
+                X: =60
+                Y: =113
+                ZIndex: =21
+
+            TextInput2_1 As text:
+                Align: =Align.Center
+                Default: ="11"
+                HintText: =""
+                Width: =154
+                X: =244
+                Y: =189
+                ZIndex: =22
+
+            Label8_16 As label:
+                Color: =RGBA(128, 128, 128, 1)
+                Height: =61
+                Text: ="Milímetros hasta umbral crítico"
+                VerticalAlign: =VerticalAlign.Top
+                Width: =161
+                X: =61
+                Y: =189
+                ZIndex: =23
+
+            TextInput2_2 As text:
+                Align: =Align.Center
+                Default: ="0.9"
+                HintText: =""
+                Width: =154
+                X: =243
+                Y: =265
+                ZIndex: =24
+
+            Label8_17 As label:
+                Color: =RGBA(128, 128, 128, 1)
+                Height: =59
+                Text: ="Tasa Desgaste x tramo MM"
+                VerticalAlign: =VerticalAlign.Top
+                Width: =161
+                X: =60
+                Y: =265
+                ZIndex: =25
+
+            Button6_8 As button:
+                Fill: =RGBA(39, 113, 194, 1)
+                Height: =57
+                OnSelect: |-
+                    =Back();
+                    Set(VFactorSeguridad,TextInput2.Text);
+                    Set(VLimite,TextInput2_1.Text);
+                    Set(VGastoMM,TextInput2_2.Text);
+                RadiusBottomLeft: =16
+                RadiusBottomRight: =16
+                RadiusTopLeft: =16
+                RadiusTopRight: =16
+                Size: =11
+                Text: ="Actualizar"
+                Width: =401
+                X: =23
+                Y: =531
+                ZIndex: =26
+
+    Container1_10 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Regular
+        Height: =75
+        Width: =1366
+        ZIndex: =3
+
+    Button2_6 As button:
+        Align: =Align.Left
+        Color: =RGBA(9, 33, 98, 1)
+        DisabledColor: =RGBA(9, 33, 98, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =75
+        PaddingBottom: =3
+        PaddingLeft: =33
+        PaddingRight: =3
+        PaddingTop: =3
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: ="A6 | Sistema de Inspección Neumaticos"
+        Width: =1366
+        ZIndex: =4
+
+    Label7_6 As label:
+        Color: =RGBA(10, 88, 245, 1)
+        Font: =Font.Arial
+        Size: =11
+        Text: ="Volver al menú"
+        X: =104
+        Y: =85
+        ZIndex: =5
+
+    Icon2_6 As icon:
+        Color: =RGBA(10, 88, 245, 1)
+        Height: =31
+        Icon: =Icon.ChevronLeft
+        OnSelect: =Navigate(Incio)
+        PaddingBottom: =9
+        PaddingRight: =300
+        PaddingTop: =9
+        Width: =333
+        X: =72
+        Y: =90
+        ZIndex: =6
+

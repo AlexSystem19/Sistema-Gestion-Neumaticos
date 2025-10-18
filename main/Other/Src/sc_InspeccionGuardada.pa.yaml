@@ -1,0 +1,659 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  sc_InspeccionGuardada:
+    Properties:
+      Fill: =ColorA6.C_FondoClaro1
+      LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+    Children:
+      - Container1_4:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            DropShadow: =DropShadow.Regular
+            Height: =75
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =1366
+      - Button2_3:
+          Control: Classic/Button@2.2.0
+          Properties:
+            Align: =Align.Left
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(9, 33, 98, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(9, 33, 98, 1)
+            DisabledFill: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            Height: =75
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            PaddingBottom: =3
+            PaddingLeft: =33
+            PaddingRight: =3
+            PaddingTop: =3
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Text: ="A6 | Sistema de Inspección Neumaticos"
+            Width: =1366
+      - Container1_5:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            BorderStyle: =BorderStyle.None
+            DropShadow: =DropShadow.None
+            Height: =673
+            RadiusBottomLeft: =11
+            RadiusBottomRight: =11
+            RadiusTopLeft: =11
+            RadiusTopRight: =11
+            Width: =Parent.Width
+            Y: =95
+          Children:
+            - Container2_1:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  BorderColor: =RGBA(230, 230, 230, 1)
+                  BorderThickness: =1
+                  DropShadow: =DropShadow.Semilight
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =582
+                  RadiusBottomLeft: =16
+                  RadiusBottomRight: =16
+                  RadiusTopLeft: =16
+                  RadiusTopRight: =16
+                  Width: =769
+                  X: =300
+                  Y: =40
+                Children:
+                  - Label3_1:
+                      Control: Label@2.5.1
+                      Properties:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Bold
+                        Size: =19
+                        Text: ="Inspección Guardada"
+                        Width: =769
+                        Y: =88
+                  - Button6_3:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =ColorFade(Self.Fill, -15%)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: =If(Connection.Connected,DisplayMode.Edit,DisplayMode.Disabled)
+                        Fill: =ColorA6.C_FondoClaroVivo
+                        Font: =Font.'Open Sans'
+                        Height: =57
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                        OnSelect: |-
+                          =Collect(DetalleListaLocal,DetalleInspeccion);
+                          Collect(DetalleListaLocal1,DetalleInspeccion);
+                          ForAll(
+                              DetalleInspeccion,
+                              Patch(
+                                  tab_sistesmaInspeccionNeuma2,
+                                  Defaults(tab_sistesmaInspeccionNeuma2),
+                                  {
+                                      Title:dPLACA,
+                                      INSPECTOR:dINSPECTOR,
+                                      UBICACION_NEUMA:Value(dUBICACION_NEUMA),
+                                      ESTADO:dESTADO,
+                                      UMBRAL:Value(dUMBRAL),
+                                      ACCION:dACCION,
+                                      FECHAINSPECCION:dFECHAINSPECCION,
+                                      FECHACAMBIO:dFECHACAMBIO,
+                                      M1:Value(dM1),
+                                      M2:Value(dM2),
+                                      M3:Value(dM3),
+                                      M4:Value(dM4),
+                                      TOTALNEUMATICOSINSPE:Value(dTOTALNEUMATICOSINSPE),
+                                      TIPOVEHICULO:dTIPOVEHICULO,
+                                      DESGASTE_DIA:Value(dDesgaste),
+                                      HORAINSPECCION:dHORAINSPECCION
+                                  }
+                              )
+                          );
+                          SaveData(DetalleListaLocal,"DetalleListaLocalOffline");
+                          SaveData(DetalleListaLocal1,"DetalleListaLocalOffline1");
+                          Clear(DetalleInspeccion);
+                          Notify("Inspecciones Sincronizadas, muchas gracias");
+                          Navigate(Incio)
+                        PressedBorderColor: =Self.Fill
+                        PressedColor: =Self.Fill
+                        PressedFill: =Self.Color
+                        RadiusBottomLeft: =16
+                        RadiusBottomRight: =16
+                        RadiusTopLeft: =16
+                        RadiusTopRight: =16
+                        Size: =11
+                        Text: ="Sincronizar"
+                        Width: =347
+                        X: =401
+                        Y: =505
+                  - Image1:
+                      Control: Image@2.2.3
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Height: =67
+                        Image: =check
+                        OnSelect: =ClearCollect(listtipovehiculolocal,Distinct(DetalleInspeccion,tipovehiculo))
+                        Width: =769
+                        Y: =21
+                  - Button6_4:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =ColorFade(Self.Fill, -15%)
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        Fill: =ColorA6.C_FondoOscu
+                        Font: =Font.'Open Sans'
+                        Height: =57
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                        OnSelect: =Navigate(sc_NuevaInspeccion_Datos)
+                        PressedBorderColor: =Self.Fill
+                        PressedColor: =Self.Fill
+                        PressedFill: =Self.Color
+                        RadiusBottomLeft: =16
+                        RadiusBottomRight: =16
+                        RadiusTopLeft: =16
+                        RadiusTopRight: =16
+                        Size: =11
+                        Text: ="Nueva Inspeccion"
+                        Width: =365
+                        X: =20
+                        Y: =505
+                  - Button8_11:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =Color.LightGray
+                        BorderStyle: =BorderStyle.None
+                        Color: =RGBA(245, 245, 245, 1)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        Fill: =ColorA6.C_FondoClaro1
+                        Font: =Font.'Open Sans'
+                        Height: =72
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                        PressedBorderColor: =Self.Fill
+                        PressedColor: =Self.Fill
+                        PressedFill: =Self.Color
+                        RadiusBottomLeft: =19
+                        RadiusBottomRight: =19
+                        RadiusTopLeft: =19
+                        RadiusTopRight: =19
+                        Text: =
+                        Width: =728
+                        X: =20
+                        Y: =169
+                  - Button8_12:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =Color.LightGray
+                        BorderStyle: =BorderStyle.None
+                        Color: =RGBA(245, 245, 245, 1)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        Fill: =ColorA6.C_FondoClaro1
+                        Font: =Font.'Open Sans'
+                        Height: =216
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                        PressedBorderColor: =Self.Fill
+                        PressedColor: =Self.Fill
+                        PressedFill: =Self.Color
+                        RadiusBottomLeft: =19
+                        RadiusBottomRight: =19
+                        RadiusTopLeft: =19
+                        RadiusTopRight: =19
+                        Text: =
+                        Width: =728
+                        X: =20
+                        Y: =255
+                  - Label8:
+                      Control: Label@2.5.1
+                      Properties:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =RGBA(128, 128, 128, 1)
+                        Font: =Font.'Open Sans'
+                        Text: ="se ha almacenado localmente."
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =275
+                        X: =251
+                        Y: =128
+                  - Label8_1:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =RGBA(128, 128, 128, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =38
+                        Text: |-
+                          ="Unidades : "&CountRows(Distinct(DetalleInspeccion,dPLACA))
+                        Width: =214
+                        X: =51
+                        Y: =186
+                  - Label8_2:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =RGBA(128, 128, 128, 1)
+                        Font: =Font.'Open Sans'
+                        Height: =38
+                        Text: |-
+                          ="Inspecciones : "& CountRows(DetalleInspeccion)
+                        Width: =161
+                        X: =290
+                        Y: =186
+            - Icon3_1:
+                Control: Classic/Icon@2.5.0
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =RGBA(54, 176, 75, 1)
+                  Height: =36
+                  Icon: =Icon.Signal
+                  Width: =30
+                  X: =992
+                  Y: =229
+            - Label12_1:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Right
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =RGBA(54, 176, 75, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  PaddingBottom: =3
+                  PaddingLeft: =3
+                  PaddingRight: =3
+                  PaddingTop: =3
+                  Text: =If(Connection.Connected,"Conectado","Sin Conexion")
+                  Width: =106
+                  X: =871
+                  Y: =225
+      - Gallery2:
+          Control: Gallery@2.15.0
+          Variant: BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =187
+            Items: =DetalleInspeccion
+            TemplateSize: =36
+            Width: =720
+            X: =325
+            Y: =425
+          Children:
+            - Button5:
+                Control: Classic/Button@2.2.0
+                Properties:
+                  BorderColor: =ColorFade(Self.Fill, -15%)
+                  Color: =RGBA(0, 0, 0, 1)
+                  DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                  Fill: =RGBA(0, 0, 0, 0)
+                  Font: =Font.'Open Sans'
+                  Height: =33
+                  HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                  HoverColor: =RGBA(255, 255, 255, 1)
+                  HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                  OnSelect: =Select(Parent)
+                  PressedBorderColor: =Self.Fill
+                  PressedColor: =Self.Fill
+                  PressedFill: =Self.Color
+                  Size: =11
+                  Text: =ThisItem.dPLACA
+                  Width: =93
+                  X: =44
+            - Button5_1:
+                Control: Classic/Button@2.2.0
+                Properties:
+                  Align: =Align.Right
+                  AutoDisableOnSelect: =false
+                  BorderColor: =ColorFade(Self.Fill, -15%)
+                  Color: =RGBA(0, 0, 0, 1)
+                  DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                  Fill: =RGBA(0, 0, 0, 0)
+                  Font: =Font.'Open Sans'
+                  Height: =33
+                  HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                  HoverColor: =RGBA(255, 255, 255, 1)
+                  HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                  OnSelect: =Select(Parent)
+                  PressedBorderColor: =Self.Fill
+                  PressedColor: =Self.Fill
+                  PressedFill: =Self.Color
+                  Size: =11
+                  Text: =Round(ThisItem.dPROMEDIO_NEUMA,2)
+                  Width: =63
+                  X: =519
+            - Button5_2:
+                Control: Classic/Button@2.2.0
+                Properties:
+                  AutoDisableOnSelect: =false
+                  BorderColor: =ColorFade(Self.Fill, -15%)
+                  Color: =If(ThisItem.dACCION="REENCAUCHE",Color.Yellow,Color.Black)
+                  DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                  Fill: =If(ThisItem.dACCION="REENCAUCHE",Color.Red,Color.Gray)
+                  Font: =Font.'Open Sans'
+                  Height: =25
+                  HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                  HoverColor: =RGBA(255, 255, 255, 1)
+                  HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =3
+                  PaddingLeft: =3
+                  PaddingRight: =3
+                  PaddingTop: =3
+                  PressedBorderColor: =Self.Fill
+                  PressedColor: =Self.Fill
+                  PressedFill: =Self.Color
+                  Size: =9
+                  Text: =ThisItem.dACCION
+                  Width: =119
+                  X: =594
+                  Y: =4
+            - Label1:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =33
+                  OnSelect: =Select(Parent)
+                  Size: =9
+                  Text: =ThisItem.dUBICACION_NEUMA
+                  Width: =44
+            - Label1_1:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =RGBA(153, 153, 153, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =33
+                  Italic: =true
+                  OnSelect: =Select(Parent)
+                  Size: =9
+                  Text: =ThisItem.dM1
+                  Width: =44
+                  X: =192
+            - Label1_2:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =RGBA(153, 153, 153, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =33
+                  Italic: =true
+                  OnSelect: =Select(Parent)
+                  Size: =9
+                  Text: =ThisItem.dM1
+                  Width: =44
+                  X: =279
+            - Label1_3:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =RGBA(153, 153, 153, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =33
+                  Italic: =true
+                  OnSelect: =Select(Parent)
+                  Size: =9
+                  Text: =ThisItem.dM1
+                  Width: =44
+                  X: =366
+            - Label1_4:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =RGBA(153, 153, 153, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =33
+                  Italic: =true
+                  OnSelect: =Select(Parent)
+                  Size: =9
+                  Text: =ThisItem.dM1
+                  Width: =44
+                  X: =453
+      - Label8_6:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(128, 128, 128, 1)
+            Font: =Font.'Open Sans'
+            Height: =25
+            Size: =11
+            Text: ="n°"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =32
+            X: =325
+            Y: =400
+      - Label8_7:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(128, 128, 128, 1)
+            Font: =Font.'Open Sans'
+            Height: =28
+            Size: =11
+            Text: ="placa"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =78
+            X: =395
+            Y: =397
+      - Label8_8:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(128, 128, 128, 1)
+            Font: =Font.'Open Sans'
+            Height: =28
+            Size: =11
+            Text: ="evaluacion"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =98
+            X: =937
+            Y: =397
+      - Label8_9:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(128, 128, 128, 1)
+            Font: =Font.'Open Sans'
+            Height: =28
+            Size: =11
+            Text: ="m1"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =78
+            X: =497
+            Y: =397
+      - Label8_10:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(128, 128, 128, 1)
+            Font: =Font.'Open Sans'
+            Height: =28
+            Size: =11
+            Text: ="m3"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =78
+            X: =659
+            Y: =397
+      - Label8_11:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(128, 128, 128, 1)
+            Font: =Font.'Open Sans'
+            Height: =28
+            Size: =11
+            Text: ="m2"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =78
+            X: =581
+            Y: =397
+      - Label8_12:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(128, 128, 128, 1)
+            Font: =Font.'Open Sans'
+            Height: =28
+            Size: =11
+            Text: ="m4"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =78
+            X: =737
+            Y: =397
+      - Label8_13:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(128, 128, 128, 1)
+            Font: =Font.'Open Sans'
+            Height: =28
+            Size: =11
+            Text: ="Promedio"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =78
+            X: =837
+            Y: =397
+      - Gallery2_6:
+          Control: Gallery@2.15.0
+          Variant: BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =250
+            Items: =Distinct(DetalleInspeccion,dPLACA)
+            TemplateSize: =84
+            Width: =745
+            X: =312
+            Y: =367
+          Children:
+            - Container5:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  DropShadow: =DropShadow.Regular
+                  Height: =68
+                  RadiusBottomLeft: =16
+                  RadiusBottomRight: =16
+                  RadiusTopLeft: =16
+                  RadiusTopRight: =16
+                  Width: =714
+                  X: =5
+                  Y: =5
+                Children:
+                  - Label16_1:
+                      Control: Label@2.5.1
+                      Properties:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Bold
+                        Height: =36
+                        OnSelect: =
+                        Text: =CountRows(Filter(DetalleInspeccion,dPLACA=ThisItem.Value))
+                        Width: =64
+                        X: =639
+                        Y: =20
+            - Label1_22:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =35
+                  OnSelect: =Select(Parent)
+                  Size: =16
+                  Text: =ThisItem.Value
+                  Width: =118
+                  X: =25
+                  Y: =21
+            - Button13:
+                Control: Classic/Button@2.2.0
+                Properties:
+                  BorderColor: =ColorFade(Self.Fill, -15%)
+                  Color: =RGBA(255, 255, 255, 1)
+                  DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                  Fill: =RGBA(56, 96, 178, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =36
+                  HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                  HoverColor: =RGBA(255, 255, 255, 1)
+                  HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+                  OnSelect: =ClearCollect(ListPEnviar,Filter(DetalleInspeccion,dPLACA=ThisItem.Value))
+                  PressedBorderColor: =Self.Fill
+                  PressedColor: =Self.Fill
+                  PressedFill: =Self.Color
+                  Visible: =false
+                  Width: =142
+                  X: =103
+                  Y: =5
+      - Label7_2:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(10, 88, 245, 1)
+            Font: =Font.Arial
+            Size: =11
+            Text: ="Volver al menú"
+            X: =331
+            Y: =85
+      - Icon2_5:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(10, 88, 245, 1)
+            Height: =31
+            Icon: =Icon.ChevronLeft
+            OnSelect: |-
+              =Navigate(Incio);
+              Collect(DetalleListaLocal,DetalleInspeccion);
+              Collect(DetalleListaLocal1,DetalleInspeccion);
+              SaveData(DetalleListaLocal,"DetalleListaLocalOffline");
+              SaveData(DetalleListaLocal1,"DetalleListaLocalOffline1");
+              //Clear(DetalleInspeccion);;
+            PaddingBottom: =9
+            PaddingRight: =300
+            PaddingTop: =9
+            Width: =333
+            X: =299
+            Y: =90
